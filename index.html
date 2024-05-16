@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edmunds' Photo Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/edmunds_logo.png" alt="Edmunds Logo" class="logo">
+        </div>
+        <nav class="menu">
+            <a href="index.html">Portfolio</a>
+            <a href="index.html">Books</a>
+            <a href="index.html">Process</a>
+            <a href="index.html">Contact Galleries</a>
+        </nav>
+    </header>
+    
+    <div class="gallery">
+        <!-- Images are added here dynamically or statically -->
+    </div>
+
+    <!-- Modal for viewing images -->
+    <div id="myModal" class="modal" style="display: none;">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            © 2024 Edmunds. My images are all mine! Forever!!
+        </div>
+        <div class="social-media">
+            <!-- Social media icons placeholders, links should point to actual social profiles -->
+            <a href="#" class="linkedin-icon">LinkedIn</a>
+            <a href="#" class="facebook-icon">Facebook</a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+/* Basic styling and color schemes */
+body {
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+}
+
+header {
+    background-color: #060622;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo-container {
+    flex-grow: 0;
+}
+
+.logo {
+    height: 50px;
+}
+
+.menu {
+    flex-grow: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    padding-bottom: 60px;
+    font-weight: bold; /* Ensure text is bold */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        margin-top: 10px;
+        align-self: center;
+        width: 100%; /* Full width for better alignment */
+    }
+
+    nav a {
+        margin-left: 0;
+        margin-right: 10px;
+        padding-bottom: 20px;
+    }
+}
+
+/* Logo specific styles */
+:root {
+    --logo-width: 200px;  /* Adjustable logo width */
+    --logo-height: auto;  /* Maintains aspect ratio */
+    --image-gap: 100px;   /* Gap between images, adjustable */
+    --max-height: 300px;  /* Maximum height for images */
+    --max-width: 300px;   /* Maximum width for images */
+    --col-count: 3;       /* Column count for the gallery grid */
+}
+
+.logo {
+    width: var(--logo-width);
+    height: var(--logo-height);
+}
+
+/* Gallery specific styles */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(var(--col-count), 1fr); /* Responsive column count */
+    gap: var(--image-gap);
+    padding: 20px;
+    justify-content: center; /* Centers the content if it doesn't fill the width */
+    margin: 0 auto; /* Centering the gallery if it doesn't reach maximum width */
+    max-width: 1200px; /* Maximum width can be adjusted based on your design preference */
+}
+
+/* Adjust the images to maintain maximum dimensions and fit properly */
+.gallery img {
+    max-height: var(--max-height);
+    max-width: var(--max-width);
+    height: auto;
+    width: auto;
+    object-fit: cover;
+}
+
+/* Media query for larger screens */
+@media (min-width: 1200px) {
+    .gallery {
+        grid-template-columns: repeat(var(--col-count), 1fr); /* Increases columns on larger screens */
+    }
+    .gallery img:nth-child(n) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* Apply additional margin adjustments for the second row */
+.gallery img:nth-child(4), .gallery img:nth-child(5), .gallery img:nth-child(6) {
+    margin-left: 60px; /* Adds spacing to the left */
+    margin-right: 60px; /* Adds spacing to the right */
+}
+
+/* Footer specific styles */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-content {
+    /* Anchors the text to the left */
+}
+
+.social-media a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px; /* Spacing between icons */
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-size: cover; /* Ensures the icon covers the area */
+    text-indent: -9999px; /* Hides the text */
+}
+
+.social-media a.linkedin-icon {
+    background-image: url('images/linkedin-icon.png');
+}
+
+.social-media a.facebook-icon {
+    background-image: url('images/facebook-icon.png');
+}
+
+/* Style the modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    display: flex; /* Using flexbox to center content */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%; /* Limiting width to ensure padding */
+    max-height: 80%; /* Limiting height to ensure it fits in the viewport */
+    object-fit: contain; /* Ensures the image is fully visible without being cropped */
+}
+
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* Navigation buttons (Prev/Next) */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.next {
+    right: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
